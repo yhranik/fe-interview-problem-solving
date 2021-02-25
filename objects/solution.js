@@ -93,6 +93,6 @@ const hero4 = {
   }
 };
 
-function myEqual(object1, object2) {
+function isEqual(object1, object2) {
   // your code here
 }
