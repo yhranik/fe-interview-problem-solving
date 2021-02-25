@@ -1,32 +1,39 @@
-// /**
-//  * Returns an object with random number
-//  * @return {Promise<{ data: number }>}
-//  */
-// const fetchData = () => {
-//   return new Promise((resolve) =>
-//     setTimeout(() => {
-//       resolve({ data: Math.random() }), 300;
-//     })
-//   );
-// };
+/**
+ * Returns an object with random number
+ * @return {Promise<{ data: number }>}
+ */
+const fetchData = () => {
+  return new Promise(resolve =>
+    setTimeout(() => {
+      resolve({ data: Math.random() }), 300
+    })
+  )
+}
 
 /**
  * Returns Promise which is resolved with an array of random numbers
- * @param {number} numbersCount
+ * @param {number} arraySize
  * @return {Promise<number[]>} For example Promise can be resolved into: [0.240107400706979]
  */
-const getArrayOfRandomNumbers = async (numbersCount = 3) => {
-//   const result = [];
+const getArrayOfRandomNumbers = async (arraySize = 3) => {
+  const result = []
 
-//   // fill result with random numbers using fetchDate
+  // fill result with random numbers using fetchDate
+  const number = (await fetchData()).data
+  result.push(number)
 
-//   return result;
-// };
+  return result
+}
 
-// const printResult = async () => {
-//   // get print output, e.g. [0.240107400706979]
-//   console.log("1: ", getArrayOfRandomNumbers());
-  console.log("2: ", getArrayOfRandomNumbers(5));
-// };
+/**
+ * Prints into console array of some random numbers
+ */
+const printResult = async () => {
+  // should print [0.240107400706979]
+  console.log('1: ', await getArrayOfRandomNumbers())
 
-// printResult();
+  // should print [0.240107400706979, 0.240107400706979, 0.240107400706979, 0.240107400706979, 0.240107400706979]
+  console.log('2: ', await getArrayOfRandomNumbers(5))
+}
+
+printResult()
