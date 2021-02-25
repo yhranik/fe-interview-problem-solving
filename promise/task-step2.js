@@ -28,3 +28,5 @@ const getArrayOfRandomNumbers = async (numbersCount = 3) => {
 //   console.log("1: ", getArrayOfRandomNumbers());
   console.log("2: ", getArrayOfRandomNumbers(5));
 // };
+
+// printResult();

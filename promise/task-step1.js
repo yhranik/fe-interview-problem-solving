@@ -26,3 +26,5 @@ const printResult = async () => {
   // get print output, e.g. [0.240107400706979]
   console.log("1: ", getArrayOfRandomNumbers());
 };
+
+printResult();
