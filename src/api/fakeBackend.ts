@@ -9,6 +9,11 @@ const posts: Post[] = [];
 
 export const delay = () => new Promise((resolve) => setTimeout(resolve, 300));
 
+export const getPosts = async () => {
+  await delay();
+  return posts;
+};
+
 export const getPost = async (id: Post["id"]) => {
   await delay();
   return posts.find((post) => post.id === id);
