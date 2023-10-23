@@ -1,4 +1,4 @@
-interface Post {
+export interface Post {
   id: number;
   title: string;
   description: string;
@@ -7,7 +7,7 @@ interface Post {
 
 const posts: Post[] = [];
 
-export const delay = () => new Promise((resolve) => setTimeout(resolve, 300));
+export const delay = () => new Promise((resolve) => setTimeout(resolve, 2000));
 
 export const getPosts = async () => {
   await delay();
